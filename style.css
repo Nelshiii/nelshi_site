@@ -698,3 +698,44 @@ footer {
   .contact-box { padding: 30px 18px; }
   .hero-cat-area { min-height: 350px; }
 }
+
+
+/* =========================================
+   HOBBY CARD LAYOUT FIX
+   ========================================= */
+
+.hobby-cards {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+}
+
+.hobby-card {
+  grid-column: span 2;
+}
+
+.hobby-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.hobby-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+@media (max-width: 900px) {
+  .hobby-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hobby-card,
+  .hobby-card:nth-child(4),
+  .hobby-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .hobby-cards {
+    grid-template-columns: 1fr;
+  }
+}
